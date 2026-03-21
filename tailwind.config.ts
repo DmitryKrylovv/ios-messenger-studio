@@ -57,6 +57,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        bubble: {
+          sent: "hsl(var(--bubble-sent))",
+          "sent-foreground": "hsl(var(--bubble-sent-foreground))",
+          received: "hsl(var(--bubble-received))",
+          "received-foreground": "hsl(var(--bubble-received-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
