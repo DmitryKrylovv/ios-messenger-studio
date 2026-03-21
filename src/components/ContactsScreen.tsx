@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AppHeader from "@/components/AppHeader";
 
 interface Contact {
   id: string;
