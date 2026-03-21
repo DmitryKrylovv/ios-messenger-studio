@@ -1,4 +1,5 @@
 import { ChevronRight, Bell, Lock, Palette, HelpCircle, LogOut } from "lucide-react";
+import AppHeader from "@/components/AppHeader";
 
 const menuItems = [
   { icon: Bell, label: "Уведомления", subtitle: "Звук, вибрация" },
