@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AppHeader from "@/components/AppHeader";
 
 interface Contact {
   id: string;
@@ -32,13 +33,12 @@ const sortedLetters = Object.keys(grouped).sort();
 const ContactsScreen = () => {
   return (
     <div className="flex flex-col h-full bg-background">
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 pt-14 pb-2">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground">Контакты</h1>
-        <button className="text-sm font-medium text-muted-foreground active:opacity-50">
-          Добавить
-        </button>
-      </div>
+      <AppHeader
+        title="Mono"
+        rightAction={
+          <button className="text-sm font-medium text-muted-foreground active:opacity-50">Добавить</button>
+        }
+      />
 
       {/* Search */}
       <div className="px-4 py-2">

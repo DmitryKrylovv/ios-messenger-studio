@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Chat } from "@/data/chats";
 import { Edit3 } from "lucide-react";
-
+import AppHeader from "@/components/AppHeader";
 interface ChatListProps {
   chats: Chat[];
   onSelect: (chat: Chat) => void;
@@ -10,16 +10,16 @@ interface ChatListProps {
 const ChatList = ({ chats, onSelect }: ChatListProps) => {
   return (
     <div className="flex flex-col h-full bg-background">
-      {/* Messenger header */}
-      <div className="flex items-center justify-between px-4 pt-14 pb-1">
-        <button className="text-sm font-medium text-muted-foreground active:opacity-50">
-          Изм.
-        </button>
-        <h1 className="text-[17px] font-semibold text-foreground">Чаты</h1>
-        <button className="active:opacity-50 transition-opacity">
-          <Edit3 size={20} className="text-foreground" />
-        </button>
-      </div>
+      <AppHeader
+        leftAction={
+          <button className="text-sm font-medium text-muted-foreground active:opacity-50">Изм.</button>
+        }
+        rightAction={
+          <button className="active:opacity-50 transition-opacity">
+            <Edit3 size={20} className="text-foreground" />
+          </button>
+        }
+      />
 
       {/* Search bar */}
       <div className="px-4 py-2">
