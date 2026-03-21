@@ -11,10 +11,7 @@ const menuItems = [
 const ProfileScreen = () => {
   return (
     <div className="flex flex-col h-full bg-background">
-      {/* Header */}
-      <div className="px-4 pt-14 pb-2">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground">Профиль</h1>
-      </div>
+      <AppHeader title="Mono" />
 
       <div className="flex-1 overflow-y-auto">
         {/* User card */}
