@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Chat } from "@/data/chats";
 import { Edit3 } from "lucide-react";
-
+import AppHeader from "@/components/AppHeader";
 interface ChatListProps {
   chats: Chat[];
   onSelect: (chat: Chat) => void;
