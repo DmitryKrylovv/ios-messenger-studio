@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Chat, Message } from "@/data/chats";
-import { ArrowLeft, Send } from "lucide-react";
+import { ArrowLeft, Send, Smile, Paperclip, Mic } from "lucide-react";
 
 interface ChatViewProps {
   chat: Chat;
