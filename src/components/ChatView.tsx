@@ -87,23 +87,18 @@ const ChatView = ({ chat, onBack }: ChatViewProps) => {
 
       {/* Input bar */}
       <div className="border-t border-border bg-background/80 backdrop-blur-xl px-3 py-2 pb-8">
-        <div className="flex items-end gap-2">
-          <div className="flex-1 flex items-center gap-1 bg-muted rounded-full px-1.5 py-1">
-            <button className="p-2 text-muted-foreground active:opacity-50 transition-opacity shrink-0">
-              <Smile size={22} />
-            </button>
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSend()}
-              placeholder="Сообщение"
-              className="flex-1 min-w-0 bg-transparent text-[15px] text-foreground placeholder:text-muted-foreground outline-none py-1"
-            />
-            <button className="p-2 text-muted-foreground active:opacity-50 transition-opacity shrink-0">
-              <Paperclip size={20} />
-            </button>
-          </div>
+        <div className="flex items-center gap-0 bg-muted rounded-full px-1">
+          <button className="p-2 text-muted-foreground active:opacity-50 transition-opacity shrink-0">
+            <Paperclip size={20} />
+          </button>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            placeholder="Сообщение"
+            className="flex-1 min-w-0 bg-transparent text-[15px] text-foreground placeholder:text-muted-foreground outline-none py-2.5"
+          />
           <AnimatePresence mode="wait">
             {input.trim() ? (
               <motion.button
@@ -113,21 +108,26 @@ const ChatView = ({ chat, onBack }: ChatViewProps) => {
                 exit={{ scale: 0, opacity: 0 }}
                 transition={{ type: "spring", damping: 20, stiffness: 400 }}
                 onClick={handleSend}
-                className="p-2.5 rounded-full bg-primary text-primary-foreground active:scale-95 transition-transform shrink-0"
+                className="p-2 text-primary active:scale-90 transition-transform shrink-0"
               >
-                <Send size={18} />
+                <Send size={20} />
               </motion.button>
             ) : (
-              <motion.button
-                key="mic"
+              <motion.div
+                key="actions"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
                 transition={{ type: "spring", damping: 20, stiffness: 400 }}
-                className="p-2.5 rounded-full bg-primary text-primary-foreground active:scale-95 transition-transform shrink-0"
+                className="flex items-center shrink-0"
               >
-                <Mic size={18} />
-              </motion.button>
+                <button className="p-2 text-muted-foreground active:opacity-50 transition-opacity">
+                  <Smile size={20} />
+                </button>
+                <button className="p-2 text-muted-foreground active:opacity-50 transition-opacity">
+                  <Mic size={20} />
+                </button>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>
